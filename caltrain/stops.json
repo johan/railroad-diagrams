@@ -1,0 +1,196 @@
+[{"name":"San Francisco"
+ ,"zone":"Zone 1"
+ ,"address":"700 4th Street"
+ ,"latlng":[37.776439, -122.394322]
+ ,"url":"http://www.caltrain.com/stations/sanfranciscostation.html"
+ }
+,{"name":"22nd Street"
+ ,"zone":"Zone 1"
+ ,"address":"1149 22nd Street"
+ ,"latlng":[37.757674, -122.392636]
+ ,"url":"http://www.caltrain.com/stations/22ndstreetstation.html"
+ }
+,{"name":"Bayshore"
+ ,"zone":"Zone 1"
+ ,"address":"400 Tunnel Avenue"
+ ,"latlng":[37.709544, -122.401318]
+ ,"url":"http://www.caltrain.com/stations/bayshorestation.html"
+ }
+,{"name":"South San Francisco"
+ ,"zone":"Zone 1"
+ ,"address":"590 Dubuque Avenue"
+ ,"latlng":[37.657013, -122.405516]
+ ,"url":"http://www.caltrain.com/stations/southsanfranciscostation.html"
+ }
+,{"name":"San Bruno"
+ ,"zone":"Zone 1"
+ ,"address":"481 Huntington Avenue"
+ ,"latlng":[37.624256, -122.408444]
+ ,"url":"http://www.caltrain.com/stations/sanbrunostation.html"
+ }
+,{"name":"Millbrae Transit Center"
+ ,"zone":"Zone 2"
+ ,"address":"100 California Drive"
+ ,"latlng":[37.600006, -122.386534]
+ ,"url":"http://www.caltrain.com/stations/millbraetransitcenter.html"
+ }
+,{"name":"Broadway"
+ ,"zone":"Zone 2"
+ ,"address":"1190 California Drive"
+ ,"latlng":[37.587466, -122.363233]
+ ,"url":"http://www.caltrain.com/stations/broadwaystation.html"
+ ,"note":"Weekend only"
+ }
+,{"name":"Burlingame"
+ ,"zone":"Zone 2"
+ ,"address":"290 California Drive"
+ ,"latlng":[37.579719, -122.345266]
+ ,"url":"http://www.caltrain.com/stations/burlingamestation.html"
+ }
+,{"name":"San Mateo"
+ ,"zone":"Zone 2"
+ ,"address":"385 First Ave."
+ ,"latlng":[37.568209, -122.323933]
+ ,"url":"http://www.caltrain.com/stations/sanmateostation.html"
+ }
+,{"name":"Hayward Park"
+ ,"zone":"Zone 2"
+ ,"address":"401 Concar Drive"
+ ,"latlng":[37.552346, -122.308916]
+ ,"url":"http://www.caltrain.com/stations/haywardparkstation.html"
+ }
+,{"name":"Hillsdale"
+ ,"zone":"Zone 2"
+ ,"address":"3333 El Camino Real"
+ ,"latlng":[37.537503, -122.298001]
+ ,"url":"http://www.caltrain.com/stations/hillsdalestation.html"
+ }
+,{"name":"Belmont"
+ ,"zone":"Zone 2"
+ ,"address":"995 El Camino Real"
+ ,"latlng":[37.520504, -122.276075]
+ ,"url":"http://www.caltrain.com/stations/belmontstation.html"
+ }
+,{"name":"San Carlos"
+ ,"zone":"Zone 2"
+ ,"address":"599 El Camino Real"
+ ,"latlng":[37.507361, -122.260365]
+ ,"url":"http://www.caltrain.com/stations/sancarlosstation.html"
+ }
+,{"name":"Redwood City"
+ ,"zone":"Zone 2"
+ ,"address":"1 James Avenue"
+ ,"latlng":[37.485412, -122.231957]
+ ,"url":"http://www.caltrain.com/stations/redwoodcitystation.html"
+ }
+,{"name":"Atherton"
+ ,"zone":"Zone 3"
+ ,"address":"1 Dinkelspiel Station Lane"
+ ,"latlng":[37.464349, -122.198106]
+ ,"url":"http://www.caltrain.com/stations/athertonstation.html"
+ ,"note":"Weekend only"
+ }
+,{"name":"Menlo Park"
+ ,"zone":"Zone 3"
+ ,"address":"1120 Merrill Street"
+ ,"latlng":[37.454604, -122.182518]
+ ,"url":"http://www.caltrain.com/stations/menloparkstation.html"
+ }
+,{"name":"Palo Alto"
+ ,"zone":"Zone 3"
+ ,"address":"95 University Avenue"
+ ,"latlng":[37.443070, -122.164900]
+ ,"url":"http://www.caltrain.com/stations/paloaltostation.html"
+ }
+,{"name":"Stanford"
+ ,"zone":"Zone 3"
+ ,"address":"100 Embarcadero Rd"
+ ,"latlng":[37.437895, -122.155513]
+ ,"url":"http://www.caltrain.com/stations/stanfordstation.html"
+ ,"note":"Football only"
+ }
+,{"name":"California Avenue"
+ ,"zone":"Zone 3"
+ ,"address":"101 California Avenue"
+ ,"latlng":[37.428835, -122.142703]
+ ,"url":"http://www.caltrain.com/stations/californiaavenuestation.html"
+ }
+,{"name":"San Antonio"
+ ,"zone":"Zone 3"
+ ,"address":"190 Showers Drive"
+ ,"latlng":[37.406163, -122.105787]
+ ,"url":"http://www.caltrain.com/stations/sanantoniostation.html"
+ }
+,{"name":"Mountain View"
+ ,"zone":"Zone 3"
+ ,"address":"600 W. Evelyn Avenue"
+ ,"latlng":[37.393879, -122.076327]
+ ,"url":"http://www.caltrain.com/stations/mountainviewstation.html"
+ }
+,{"name":"Sunnyvale"
+ ,"zone":"Zone 3"
+ ,"address":"121 W. Evelyn Avenue"
+ ,"latlng":[37.377589, -122.030116]
+ ,"url":"http://www.caltrain.com/stations/sunnyvalestation.html"
+ }
+,{"name":"Lawrence"
+ ,"zone":"Zone 4"
+ ,"address":"137 San Zeno Way"
+ ,"latlng":[37.371578, -121.996982]
+ ,"url":"http://www.caltrain.com/stations/lawrencestation.html"
+ }
+,{"name":"Santa Clara"
+ ,"zone":"Zone 4"
+ ,"address":"1001 Railroad Avenue"
+ ,"latlng":[37.352915, -121.936376]
+ ,"url":"http://www.caltrain.com/stations/santaclarastation.html"
+ }
+,{"name":"College Park"
+ ,"zone":"Zone 4"
+ ,"address":"780 Stockton Avenue"
+ ,"latlng":[37.342170, -121.914998]
+ ,"url":"http://www.caltrain.com/stations/collegeparkstation.html"
+ }
+,{"name":"San Jose Diridon"
+ ,"zone":"Zone 4"
+ ,"address":"65 Cahill Street"
+ ,"latlng":[37.330196, -121.901985]
+ ,"url":"http://www.caltrain.com/stations/sanjosediridonstation.html"
+ }
+,{"name":"Tamien"
+ ,"zone":"Zone 4"
+ ,"address":"1355 Lick Avenue"
+ ,"latlng":[37.311680, -121.882087]
+ ,"url":"http://www.caltrain.com/stations/tamienstation.html"
+ }
+,{"name":"Capitol"
+ ,"zone":"Zone 5"
+ ,"address":"3400 Monterey Hwy."
+ ,"latlng":[37.284359, -121.841589]
+ ,"url":"http://www.caltrain.com/stations/capitolstation.html"
+ }
+,{"name":"Blossom Hill"
+ ,"zone":"Zone 5"
+ ,"address":"5560 Monterey Hwy."
+ ,"latlng":[37.252801, -121.797369]
+ ,"url":"http://www.caltrain.com/stations/blossomhillstation.html"
+ }
+,{"name":"Morgan Hill"
+ ,"zone":"Zone 6"
+ ,"address":"17300 Depot Street"
+ ,"latlng":[37.129081, -121.650721]
+ ,"url":"http://www.caltrain.com/stations/morganhillstation.html"
+ }
+,{"name":"San Martin"
+ ,"zone":"Zone 6"
+ ,"address":"13400 Monterey Hwy."
+ ,"latlng":[37.085775, -121.610809]
+ ,"url":"http://www.caltrain.com/stations/sanmartinstation.html"
+ }
+,{"name":"Gilroy"
+ ,"zone":"Zone 6"
+ ,"address":"7150 Monterey Street"
+ ,"latlng":[37.003084, -121.567091]
+ ,"url":"http://www.caltrain.com/stations/gilroystation.html"
+ }
+]
