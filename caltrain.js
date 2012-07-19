@@ -33,8 +33,8 @@ vis.selectAll('path.line')
   .data([data])
   .enter()
     .append('svg:path')
-      .attr('d', d3.svg.line().x(function(d, i) { return x(t0 + i * 10); })
-                              .y(function(d, i) { return y(d); }))
+      .attr('d', d3.svg.line().x(function(d, i) { return p(x(t0 + i * 10)); })
+                              .y(function(d, i) { return p(y(d)); }))
   ;
 
 function stationInfo(stop, i) { // stop: {"t":"08:15","s":29700}
@@ -48,6 +48,7 @@ function stationInfo(stop, i) { // stop: {"t":"08:15","s":29700}
 }
 
 function I(i) { return i; }
+function p(n) { return n.toFixed(3); }
 
 stops = schedule.stops.map(stationInfo).filter(I);
 
@@ -56,10 +57,10 @@ y_ticks = vis.selectAll('.ticky')
   .data(stops)
   .enter()
     .append('svg:g')
-    .attr('transform', function(d) {
-      return 'translate(0, ' + y(d.lat) + ')';
-    })
     .attr('class', 'ticky')
+    .attr('transform', function(d) {
+      return 'translate(0,' + p(y(d.lat)) + ')';
+    })
   ;
 y_ticks.append('svg:line')
   .attr('y1', 0)
@@ -77,11 +78,11 @@ x_ticks = vis.selectAll('.tickx')
   .data(stops)
   .enter()
     .append('svg:g')
-      .attr('transform', function(d, i) {
-        return 'translate(' + x(d.seconds) + ', 0)';
-      })
       .attr('class', function(d, i) {
         return 'tickx' + (i ? i == stops.length - 1 ? ' final' : '' : ' first');
+      })
+      .attr('transform', function(d, i) {
+        return 'translate(' + p(x(d.seconds)) + ')';
       })
   ;
 x_ticks.append('svg:line')
@@ -113,8 +114,8 @@ vis.selectAll('.point')
       .attr('r', function(d, i) {
         return d === max ? 6 : 4;
       })
-      .attr('cx', function(d, i) { return x(d.seconds); })
-      .attr('cy', function(d, i) { return y(d.lat); })
+      .attr('cx', function(d, i) { return p(x(d.seconds)); })
+      .attr('cy', function(d, i) { return p(y(d.lat)); })
   .on('mouseover', hilight)
   .on('mouseout', unhilight)
   .on('click', function(d, i) { return console.log(d, i); })
