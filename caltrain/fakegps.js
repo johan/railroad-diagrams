@@ -1,4 +1,8 @@
+// generate one-shot mock-up gps logs via copy(json(fake(schedule))), or a day's
+// worth of gps logs for all trains: copy(fakeMany(schedules))
+
 var NOISE_LEVEL = 0.5 // how much gps noise to add to readouts
+  , PRECISION = 6  // digits of precision
   , schedule = {"id":260,"type":"Limited","stops":[{"t":"15:37","s":56220},null,null,null,{"t":"15:51","s":57060},{"t":"15:55","s":57300},null,{"t":"15:59","s":57540},{"t":"16:02","s":57720},null,{"t":"16:06","s":57960},{"t":"16:09","s":58140},{"t":"16:12","s":58320},{"t":"16:17","s":58620},null,{"t":"16:22","s":58920},{"t":"16:25","s":59100},null,{"t":"16:29","s":59340},{"t":"16:33","s":59580},{"t":"16:37","s":59820},{"t":"16:42","s":60120},{"t":"16:46","s":60360},{"t":"16:51","s":60660},null,{"t":"17:00","s":61200},{"t":"17:07","s":61620},null,null,null,null,null]}
 , stations =
 [ [37.776439, -122.394322]
@@ -34,28 +38,47 @@ var NOISE_LEVEL = 0.5 // how much gps noise to add to readouts
 , [37.085775, -121.610809]
 , [37.003084, -121.567091]
 ]
-, skips = schedule.stops.map(nil)
-, stop1 = skips.indexOf(false)
-, stopN = skips.lastIndexOf(false)
-, first = schedule.stops[stop1]
-, last  = schedule.stops[stopN]
-, track = []
-, t_res = 10 // one gps readout every 10s
-, prec  = 6  // digits of precision
-, stop  = stop1, stop_t, stop_coord
-, next,          next_t, next_coord
-, step, steps
 ;
 
-for (stop = stop1; -1 != (next = skips.indexOf(false, stop + 1)); stop = next) {
-  stop_coord = stations[stop]; stop_t = schedule.stops[stop].s;
-  next_coord = stations[next]; next_t = schedule.stops[next].s;
-  steps = Math.ceil((next_t - stop_t) / t_res);
-  if (window.names) console.log(schedule.stops[stop].t +' in '+ names[stop]);
-  for (step = 0; step < steps; step++) {
-  //track = track.concat(readingBetween(stop_coord, next_coord, step, steps));
-    track.push(readingBetween(stop_coord, next_coord, step, steps));
+function fakeMany(schedules, name) {
+  var track = '', sep = '{';
+  schedules.forEach(function addTrack(t) {
+    track += sep + JSON.stringify(name +'-'+ t.id) +':'+ json(fake(t), '');
+    sep = ',';
+  });
+  return track +'}\n';
+}
+
+function fake(schedule) {
+  var skips = schedule.stops.map(nil)
+    , stop1 = skips.indexOf(false)
+    , stopN = skips.lastIndexOf(false)
+    , first = schedule.stops[stop1]
+    , last  = schedule.stops[stopN]
+    , track = []
+    , t_res = 10 // one gps readout every 10s
+    , stop  = stop1, stop_t, stop_coord
+    , next,          next_t, next_coord
+    , step, steps
+    ;
+
+  for (stop = stop1;
+       -1 !== (next = skips.indexOf(false, stop + 1));
+       stop = next, stop_t = next_t) {
+    stop_coord = stations[stop];
+    next_coord = stations[next];
+    stop_t = stop_t || schedule.stops[stop].s;
+    next_t = schedule.stops[next].s;
+    if (next_t < stop_t) next_t += 24 * 60 * 60; // end-of-day wrap-around
+    steps = Math.ceil((next_t - stop_t) / t_res);
+    if (window.names) console.log(schedule.stops[stop].t +' in '+ names[stop]);
+    for (step = 0; step < steps; step++) {
+    //track = track.concat(readingBetween(stop_coord, next_coord, step, steps));
+      track.push(readingBetween(stop_coord, next_coord, step, steps));
+    }
   }
+
+  return track;
 }
 
 function I(i) { return i; }
@@ -72,10 +95,10 @@ function readingBetween(p1, p2, step, steps) {
   return [ry, rx];
 }
 
-function json(t) {
-  var js = '', sep = '[';
+function json(t, n) {
+  var js = '', sep = '[', nl = n === undefined ? '\n' : n, prec = PRECISION;
   t.forEach(function(pair) {
-    js += sep + '['+ pair[0].toFixed(prec) +','+ pair[1].toFixed(prec) +']\n';
+    js += sep + '['+ pair[0].toFixed(prec) +','+ pair[1].toFixed(prec) +']'+ nl;
     sep = ',';
   });
   return js +']\n';
